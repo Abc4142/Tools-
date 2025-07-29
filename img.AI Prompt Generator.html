@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Generate creative AI prompts for blogs, marketing, coding and more." />
+  <meta name="keywords" content="AI prompt generator, free prompts, writing prompts, blog prompt, GPT prompt tool" />
+  <meta name="author" content="YourName" />
+  <title>AI Prompt Generator Tool</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: #4f46e5;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    label {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      display: block;
+      color: #333;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 12px 16px;
+      margin: 10px 0 20px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      transition: 0.3s ease;
+    }
+
+    select:focus, button:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    }
+
+    button {
+      background: #4f46e5;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #3730a3;
+    }
+
+    .output-box {
+      background: #f3f4f6;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      color: #222;
+      min-height: 80px;
+    }
+
+    .ads {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      padding: 20px;
+      background: #f9f9f9;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 20px;
+        padding: 20px;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>AI Prompt Generator Tool</h1>
+    <p>Generate creative AI prompts for blogs, marketing & more</p>
+  </header>
+
+  <main>
+    <label for="category">Choose a prompt category:</label>
+    <select id="category">
+      <option value="blog">📝 Blog Writing</option>
+      <option value="marketing">📢 Marketing</option>
+      <option value="coding">💻 Coding</option>
+      <option value="startup">🚀 Startup Idea</option>
+      <option value="social">📱 Social Media</option>
+    </select>
+
+    <button onclick="generatePrompt()">Generate Prompt</button>
+
+    <div class="output-box" id="promptBox">
+      Your AI prompt will appear here...
+    </div>
+
+    <div class="ads">
+      <!-- AdSense Placeholder -->
+      <p><i>[Insert AdSense Code Here]</i></p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 AI Prompt Generator Tool | Built with ❤️ for creators
+  </footer>
+
+  <script>
+    const prompts = {
+      blog: [
+        "Write a blog post about the future of remote work in 2030.",
+        "Create a listicle of top 10 AI tools for content creators in 2025.",
+        "Explain how climate change affects daily human productivity."
+      ],
+      marketing: [
+        "Create a Facebook ad copy for an eco-friendly water bottle startup.",
+        "Write a viral tweet for launching a new digital product.",
+        "Design an Instagram caption for a flash sale on tech gadgets."
+      ],
+      coding: [
+        "Generate a Python script to scrape latest news from a website.",
+        "Write JavaScript code to create a dark/light theme toggle.",
+        "Create a responsive navbar using HTML, CSS, and JavaScript."
+      ],
+      startup: [
+        "Pitch an AI-based mental health app to investors.",
+        "Generate a SaaS idea solving time-tracking for freelancers.",
+        "Describe a blockchain-based solution for voting systems."
+      ],
+      social: [
+        "Write a trending Instagram reel script for productivity tips.",
+        "Create 5 TikTok video ideas on fitness hacks.",
+        "Generate a tweet thread on digital minimalism."
+      ]
+    };
+
+    function generatePrompt() {
+      const category = document.getElementById('category').value;
+      const categoryPrompts = prompts[category];
+      const randomPrompt = categoryPrompts[Math.floor(Math.random() * categoryPrompts.length)];
+      document.getElementById('promptBox').innerText = randomPrompt;
+    }
+  </script>
+
+</body>
+</html>
